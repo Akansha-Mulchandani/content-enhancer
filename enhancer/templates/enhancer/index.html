@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Content Enhancer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .output {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .output div {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Content Enhancer</h1>
+        <form method="post">
+            {% csrf_token %}
+            <textarea name="input_text" placeholder="Enter your text here"></textarea>
+            <button type="submit">Process</button>
+        </form>
+        {% if corrected_text %}
+        <div class="output">
+            <h3>Corrected Text:</h3>
+            <p>{{ corrected_text }}</p>
+            <h3>Enhanced Content:</h3>
+            <p>{{ enhanced_text }}</p>
+            <h3>Hashtags:</h3>
+            <p>{{ hashtags }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
