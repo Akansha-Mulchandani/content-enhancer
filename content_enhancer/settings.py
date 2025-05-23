@@ -7,7 +7,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-default-secret-key-for-lo
 
 DEBUG = os.environ.get('PYTHONANYWHERE') != 'true'
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'Akansha032004.pythonanywhere.com']  # Replace with your PythonAnywhere username
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'akansha03mulchandani.pythonanywhere.com']  # Replace with your PythonAnywhere username
 
 INSTALLED_APPS = [
     'django.contrib.admin',
